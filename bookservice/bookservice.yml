@@ -6,7 +6,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
   datasource:
-    url: jdbc:mysql://localhost:3306/book
+    url: jdbc:mysql://localhost:3306/book?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false
     username: root
     password: "{cipher}f8fa0769072f4965ba24769e926d8d592e86ca1779535d90aa76e0748afd1ed7"
     driver-class-name: com.mysql.jdbc.Driver
