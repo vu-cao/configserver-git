@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/author_prod?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
+    platform: mysql
+    username: root
+    password: "{cipher}f8fa0769072f4965ba24769e926d8d592e86ca1779535d90aa76e0748afd1ed7"
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
