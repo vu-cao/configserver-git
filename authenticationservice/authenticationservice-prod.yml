@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    initialization-mode: never
+    url: jdbc:mysql://localhost:3306/authentication_prod?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
+    platform: mysql
+    username: root
+    password: "{cipher}f8fa0769072f4965ba24769e926d8d592e86ca1779535d90aa76e0748afd1ed7"
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: false
