@@ -7,7 +7,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    initialization-mode: always
+    initialization-mode: never
     platform: mysql
     url: jdbc:mysql://localhost:3306/authentication?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     username: root
