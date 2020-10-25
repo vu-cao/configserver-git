@@ -14,3 +14,7 @@ spring:
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
+
+redis:
+  server: redis
+  port: 6379
