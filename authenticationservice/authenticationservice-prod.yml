@@ -1,22 +1,31 @@
 spring:
   jpa:
-    show-sql: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-    hibernate:
-      ddl-auto: none
-
   datasource:
     initialization-mode: never
-    url: jdbc:mysql://localhost:3306/authentication_prod?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     platform: mysql
+    url: jdbc:mysql://database:3306/authentication?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: "{cipher}f8fa0769072f4965ba24769e926d8d592e86ca1779535d90aa76e0748afd1ed7"
+    driver-class-name: com.mysql.cj.jdbc.Driver
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
-
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
     enabled: false
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://eurekaservice:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+  
