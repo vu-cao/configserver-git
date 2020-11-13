@@ -1,9 +1,7 @@
 spring:
   jpa:
     show-sql: true
-    properties:
-      hibernate:
-
+    
   datasource:
     url: jdbc:mysql://localhost:3306/authentication?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     username: root
