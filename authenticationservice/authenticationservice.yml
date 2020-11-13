@@ -1,7 +1,7 @@
 spring:
   jpa:
     show-sql: true
-    
+
   datasource:
     url: jdbc:mysql://localhost:3306/authentication?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     username: root
@@ -10,8 +10,5 @@ spring:
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
-  liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.yaml
-    enabled: false
 
   
