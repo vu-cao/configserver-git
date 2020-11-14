@@ -6,10 +6,25 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
 
   datasource:
-    url: jdbc:mysql://localhost:3306/author_prod?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     platform: mysql
+    url: jdbc:mysql://localhost:3306/author_prod?useLegacyDatetimeCode=false&serverTimezone=Australia/Sydney&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: "{cipher}f8fa0769072f4965ba24769e926d8d592e86ca1779535d90aa76e0748afd1ed7"
+    driver-class-name: com.mysql.cj.jdbc.Driver
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      default-zone: http://eurekaservice:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://authenticationservice:8002/v1/user

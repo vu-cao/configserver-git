@@ -14,3 +14,17 @@ spring:
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8002/v1/user
